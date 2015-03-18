@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="hifi-shop" default="deploy" basedir=".">
+
+  <property name="tomcat.dir" value="d:\dev\apache-tomcat-7.0.56"/>
+
+  <property name="src.dir"    value="src" /> 
+  <property name="src.main"   value="${src.dir}/main"/>
+  <property name="target.dir"   value="target"/>
+  <property name="dist.dir"   value="target/hifi-shop"/>
+  <property name="webapp.dir"   value="${src.dir}/webapp"/>
+  <property name="classes.dir"   value="${dist.dir}/WEB-INF/classes"/>
+
+  <path id="classpath">
+    <pathelement path="${tomcat.dir}/lib/*.jar"/>
+    <pathelement path="${dist.dir}/WEB-INF/lib/*.jar"/>
+  </path>
+
+  <path id="tomcat.classpath">
+    <fileset dir="${tomcat.dir}/lib">
+        <include name="*.jar"/>
+    </fileset>
+  </path>
+  
+  <path id="project.classpath">
+    <fileset dir="${dist.dir}/WEB-INF/lib">
+        <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <target name="init">
+    <delete dir="${dist.dir}" failonerror="true"/>
+    <mkdir dir="${dist.dir}"/>
+    <copy todir="${dist.dir}">
+      <fileset dir="${webapp.dir}"/> 
+    </copy>
+    <mkdir dir="${classes.dir}"/>
+  </target>
+  
+  <target name="copy" depends="init">
+    <copy todir="${classes.dir}">
+      <fileset dir="${src.main}/resources"/> 
+    </copy>
+  </target>
+
+  <target name="compile" depends="copy">
+    <javac fork="true" source="1.7" srcdir="${src.main}" destdir="${classes.dir}">
+      <compilerarg line="-encoding UTF-8 "/>
+      <classpath refid="project.classpath"/>
+      <classpath refid="tomcat.classpath"/>
+    </javac> 
+  </target>
+  
+  <target name="package" depends="compile">
+    <war destfile="${dist.dir}/hifi-shop.war"  basedir="${dist.dir}"/>
+  </target>
+
+  <target name="deploy" depends="package">
+    <copy file="${dist.dir}/hifi-shop.war" todir="${tomcat.dir}/webapps" />
+  </target>
+
+</project>
