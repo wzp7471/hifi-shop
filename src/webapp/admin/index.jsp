@@ -16,9 +16,9 @@
 
 	<div class="navbar">
 		<div class="navbar-innert">
-			<a class="brand" href="#"><img
+			<%-- <a class="brand" href="#"><img
 				src="<%=basePath%>admin/ui/assets/img/logo.png" width="175"
-				height="30" alt=""> </a> <a class="brand" href="#">欢迎登录后台管理系统</a>
+				height="30" alt=""> </a> --%> <a class="brand" href="#">欢迎登录后台管理系统</a>
 		</div>
 	</div>
 	<div class="container-fluid containerb">
@@ -26,7 +26,7 @@
 		<div class="row-fluid">
 
 			<div class="span2">
-				<a href="#" class="thumbnail"><img
+				<%-- <a href="#" class="thumbnail"><img
 					src="<s:property value="#session.admin.headpath"/>" alt=""
 					class="caption"> </a>
 				<div class="well well-small smallt">
@@ -38,14 +38,14 @@
 				</div>
 
 
-				<div class="line-dotted"></div>
+				<div class="line-dotted"></div> --%>
 				<!-- 引入左侧导航 -->
 				<%@include file="left.jsp"%>
 
 			</div>
 
 			<div class="span7">
-				<div class="row-fluid">
+				<%--<div class="row-fluid">
 					<ul class="thumbnails">
 						<li class="span2"><a
 							href="<%=basePath%>admin/goods/goods.jsp?operate=add"
@@ -65,10 +65,10 @@
 								src="<%=basePath%>admin/ui/assets/img/header/icon-48-category.png"
 								alt="" class="caption">
 								<h4>分类管理</h4> </a></li>
-						<li class="span2"><a href="<%=basePath%>admin/order/normalordersment.jsp?operate=find" class="thumbnail"><img
+						 <li class="span2"><a href="<%=basePath%>admin/order/normalordersment.jsp?operate=find" class="thumbnail"><img
 								src="<%=basePath%>admin/ui/assets/img/header/icon-48-stats.png"
 								alt="" class="caption">
-								<h4>订单管理</h4> </a></li>
+								<h4>订单管理</h4> </a></li> 
 						<li class="span2"><a href="<%=basePath%>admin/member/membergroupment.jsp?operate=find" class="thumbnail"><img
 								src="<%=basePath%>admin/ui/assets/img/header/icon-48-user.png"
 								alt="" class="caption">
@@ -78,7 +78,7 @@
 								alt="" class="caption">
 								<h4>基本设置</h4> </a></li>
 					</ul>
-				</div>
+				</div>--%>
 				<!-- 新的模块页面 -->
 				<style type="text/css">
 					.home,#Profile,#Messages{
@@ -137,7 +137,7 @@
 						</li>
 			        </div>
 				</div>
-				<!-- tag -->
+				<%-- <!-- tag -->
 				 <ul id="mytab" class="nav nav-tabs">
 				 	<li class="active"><a href="#Home" data-toggle="tab">订单管理</a></li>
 				 </ul>
@@ -157,7 +157,7 @@
 							</a>
 						</li>
 			        </div>
-				</div>
+				</div> --%>
 				<!-- tag -->
 				 <ul id="mytab" class="nav nav-tabs">
 				 	<li class="active"><a href="#Home" data-toggle="tab">会员管理</a></li>
@@ -174,7 +174,7 @@
 						<li class="span2">
 							<a href="<%=basePath%>admin/member/membergroup.jsp?operate=add" class="thumbnail">
 								<img src="<%=basePath%>admin/ui/assets/img/header/icon-48-groups-add.png"	alt="" class="caption">
-								<h4>添加会员分组</h4>
+								<h4>会员分组</h4>
 							</a>
 						</li>
 			        </div>
@@ -209,7 +209,7 @@
 				
 			</div>
 
-			<div class="span3">
+			<%-- <div class="span3">
 				<h4>最新需发货订单</h4>
 				<ul class="nav nav-list bs-docs-sidenavh">
 					<s:iterator id="bean" value="#session.newestorders" status="newestorders">
@@ -234,7 +234,7 @@
 				</ul>
 
  -->
-			</div>
+			</div> --%>
 
 		</div>
 

@@ -7,7 +7,7 @@
 
 	<div class="well well-small">
 		<ul class="nav nav-list">
-			<li class="nav-header">自定义快捷菜单</li>
+			<li class="nav-header">快捷菜单</li>
 			<li><a
 				href="<%=basePath%>admin/goods/goodstypetnment.jsp?operate=find">商品类型参数设置</a></li>
 			<li><a
@@ -25,7 +25,7 @@
 		</ul>
 	</div>
 	
-	<div class="well well-small">
+	<!-- <div class="well well-small">
 		<ul class="nav nav-list">
 			<li class="nav-header">你可以</li>
 			<li><a target="_blank"
@@ -33,5 +33,5 @@
 			<li><a target="_blank"
 			href="http://www.jshoper.org">在jshoperx官网了解我们更多</a></li>
 		</ul>
-	</div>
+	</div> -->
 </body>

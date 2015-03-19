@@ -92,9 +92,9 @@ html {
 
 		<form class="form-signin" action="bk/user/adminlogin.action"
 			method="post">
-			<h2 class="form-signin-heading">
-				<img src="<%=basePath%>admin/ui/assets/img/logo.png" width="280"
-					height="48">
+			<h2 class="form-signin-heading">HiFi后台管理
+				<%-- <img src="<%=basePath%>admin/ui/assets/img/logo.png" width="280"
+					height="48"> --%>
 			</h2>
 
 			<div class="messages">
@@ -122,7 +122,7 @@ html {
 
 
 	</div>
-	<div class="navbar navbar-fixed-bottom">
+	<%-- <div class="navbar navbar-fixed-bottom">
 		<div class="navbar-inner navbar-innerb">
 			<div class="pull-right fixed-bottom-cp">&copy; jshoper 2012</div>
 			<div class="viewsite fixed-bottom-div">
@@ -136,7 +136,7 @@ html {
 				<span class="badge">1</span> 管理在线
 			</div>
 		</div>
-	</div>
+	</div> --%>
 	<!-- Le javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->

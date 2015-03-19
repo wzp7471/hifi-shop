@@ -12,7 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="magi">
-<title>首页 &middot; jshoper</title>
+<title>首页 &middot;管理</title>
 <!-- Le styles -->
 <link href="<%=basePath%>admin/ui/assets/css/bootstrap.css"
 	rel="stylesheet">
@@ -60,7 +60,7 @@
 				<div class="nav-collapse collapse navbar-inverse-collapse">
 					<ul class="nav">
 						<li class="active"><a href="<%=basePath%>admin/index.jsp">主页</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
+						<!-- <li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">实验室 <b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">
@@ -71,23 +71,23 @@
 							<li class="divider"></li>
 							<li class="nav-header">未上市产品</li>
 							<li><a href="/admin/tencentweixin/company/weixin_company_index.jsp"><i class="icon-globe"></i>微信OA</a></li>
-						</ul></li>
+						</ul></li> -->
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">管理 <b class="caret"></b>
 						</a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="icon-star"></i> 授权</a></li>
-								<li><a href="#"><i class="icon-wrench"></i> 技术支持</a></li>
-								<li class="divider"></li>
+								<!-- <li><a href="#"><i class="icon-star"></i> 授权</a></li>
+								<li><a href="#"><i class="icon-wrench"></i> 技术支持</a></li> -->
+								<!-- <li class="divider"></li> 
 								<li><a
 									href="<%=basePath%>admin/user/userment.jsp?operate=find"><i
-										class="icon-user"></i> 账号（管理员）</a></li>
+										class="icon-user"></i> 账号（管理员）</a></li>-->
 								<li><a
 									href="<%=basePath%>admin/user/userment.jsp?operate=find"><i
 										class="icon-user"></i>系统用户列表</i></a></li>
-								<li><a href="<%=basePath%>admin/user/userment.jsp?operate=find"><i class="icon-user"></i>添加微信账号</i></a></li>
+								<%-- <li><a href="<%=basePath%>admin/user/userment.jsp?operate=find"><i class="icon-user"></i>添加微信账号</i></a></li>
 								<li><a href="<%=basePath%>admin/user/userment.jsp?operate=find"><i class="icon-user"></i>微信账号设置</i></a></li>
-								<li><a href="#"><i class="icon-envelope"></i> 信息中心 (0)</a></li>
+								<li><a href="#"><i class="icon-envelope"></i> 信息中心 (0)</a></li> --%>
 							</ul></li>
 
 					</ul>
@@ -119,7 +119,7 @@
 								<li><a
 									href="<%=basePath%>admin/goods/goodsment.jsp?operate=find">所有商品
 								</a></li>
-								<li class="divider"></li>
+								<%-- <li class="divider"></li>
 								<li><a
 									href="<%=basePath%>admin/goods/goodsbelinkedsale.jsp?operate=add">添加关联销售商品
 								</a></li>
@@ -136,7 +136,7 @@
 								</a></li>
 								<li><a
 									href="<%=basePath%>admin/goods/goodsgroupment.jsp?operate=find">团购商品列表
-								</a></li>
+								</a></li> --%>
 								<!--  <li><a href="#">团购商品 </a></li>
 								<li><a href="#">团购订单管理 </a></li>-->
 								<!-- <li class="dropdown-submenu"><a tabindex="-1" href="#">商品列表</a>
@@ -151,7 +151,7 @@
 								<li><a
 									href="<%=basePath%>admin/goods/goodscommentment.jsp?operate=find">商品评论</a></li>
 							</ul></li>
-						<li class="dropdown"><a class="dropdown-toggle"
+						<%-- <li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#"> 订单管理 <b class="caret"></b>
 						</a>
 							<ul class="dropdown-menu">
@@ -187,7 +187,7 @@
 											href="<%=basePath%>admin/order/mobileorderstobeshippedhavepayment.jsp?operate=find">已付款——需发货手机订单</a></li>
 
 									</ul></li>
-							</ul></li>
+							</ul></li> --%>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#">会员管理 <b class="caret"></b>
 						</a>
@@ -202,8 +202,8 @@
 									href="<%=basePath%>admin/member/memberment.jsp?operate=find">会员列表</a></li>
 								<li><a
 									href="<%=basePath%>admin/member/membergradement.jsp?operate=find">会员等级设置</a></li>
-								<li><a
-									href="<%=basePath%>admin/member/memberrechargement.jsp?operate=find">会员充值中心</a></li>
+								<%-- <li><a
+									href="<%=basePath%>admin/member/memberrechargement.jsp?operate=find">会员充值中心</a></li> --%>
 							</ul></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#"> 内容管理 <b class="caret"></b>
@@ -217,8 +217,8 @@
 									href="<%=basePath%>admin/pagecontent/article.jsp?operate=add">添加文章</a></li>
 								<li><a
 									href="<%=basePath%>admin/pagecontent/articlement.jsp?operate=find">所有文章</a></li>
-								<li><a
-									href="<%=basePath%>admin/pagecontent/staticpagecontent.jsp?operate=find">静态化内容</a></li>
+								<%-- <li><a
+									href="<%=basePath%>admin/pagecontent/staticpagecontent.jsp?operate=find">静态化内容</a></li> --%>
 								<!-- <li><a
 									href="<%=basePath%>admin/pagecontent/advertise.jsp?operate=add">添加广告</a></li>
 									<li><a
@@ -235,15 +235,15 @@
 							data-toggle="dropdown" href="#"> 系统设置 <b class="caret"></b>
 						</a>
 							<ul class="dropdown-menu">
-								<li><a
+							    <li><a
+                                    href="<%=basePath%>admin/setting/globalparamset.jsp?operate=find">全局参数设置</a></li>
+								 <%-- <li><a
 									href="<%=basePath%>admin/setting/basicinfo.jsp?operate=find">商户信息设置</a></li>
 								<li>
 								<li><a
 									href="<%=basePath%>admin/setting/basicinfoment.jsp?operate=find">商户信息列表</a></li>
 								<li><a
 									href="<%=basePath%>admin/setting/emailment.jsp?operate=find">邮箱设置</a></li>
-								<li><a
-									href="<%=basePath%>admin/setting/globalparamset.jsp?operate=find">全局参数设置</a></li>
 								<li><a
 									href="<%=basePath%>admin/setting/paymentment.jsp?operate=find">支付方式设置</a></li>
 								<li><a
@@ -259,7 +259,7 @@
 								<li><a
 									href="<%=basePath%>admin/setting/functionment.jsp?operate=find">模块功能设置</a></li>
 								<li><a
-									href="<%=basePath%>admin/setting/rolement.jsp?operate=find">角色权限设置</a></li>
+									href="<%=basePath%>admin/setting/rolement.jsp?operate=find">角色权限设置</a></li> --%>
 							</ul></li>
 					</ul>
 				</div>
