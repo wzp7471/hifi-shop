@@ -2,7 +2,7 @@
 
 <project name="hifi-shop" default="deploy" basedir=".">
 
-  <property name="tomcat.dir" value="d:\dev\apache-tomcat-7.0.56"/>
+  <property name="tomcat.dir" value="/root/tomcat-7.0.59"/>
 
   <property name="src.dir"    value="src" /> 
   <property name="src.main"   value="${src.dir}/main"/>
