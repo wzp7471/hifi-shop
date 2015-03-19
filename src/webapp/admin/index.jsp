@@ -16,9 +16,9 @@
 
 	<div class="navbar">
 		<div class="navbar-innert">
-			<%-- <a class="brand" href="#"><img
+			<a class="brand" href="#"><img
 				src="<%=basePath%>admin/ui/assets/img/logo.png" width="175"
-				height="30" alt=""> </a> --%> <a class="brand" href="#">欢迎登录后台管理系统</a>
+				height="30" alt=""> </a>  <a class="brand" href="#">欢迎登录后台管理系统</a>
 		</div>
 	</div>
 	<div class="container-fluid containerb">
