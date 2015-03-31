@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.InterceptorRefs;
@@ -183,8 +184,9 @@ ServletRequestAware, ServletResponseAware {
 		List<GoodsT>list=this.getGoodsTService().findrecommendedGoodsT(StaticKey.ONE, StaticKey.ONE, lineSize);
 		Gson gson=new Gson();
 		String jsonstr=gson.toJson(list);
-		response.setContentType("text/html");
+		response.setContentType("text/json");
 		response.setCharacterEncoding("utf-8");
+		response.addHeader("Access-Control-Allow-Origin", "*");
 		PrintWriter out=response.getWriter();
 		out.write(jsonstr);
 		out.flush();
@@ -198,6 +200,7 @@ ServletRequestAware, ServletResponseAware {
 	 */
 	@Action(value="findAllGoodsCategoryTforAndroid")
 	public void findAllGoodsCategoryTforAndroid() throws IOException{
+	    String cbName = request.getParameter("callback");
 		String state="1";//表示显示的商品分类
 		List<GoodsCategoryT>list=this.getGoodsCategoryTService().findAllGoodsCategoryT(state);
 		StringBuilder json=new StringBuilder();
@@ -224,8 +227,12 @@ ServletRequestAware, ServletResponseAware {
 		}
 		json.deleteCharAt(json.length()-1);
 		json.append("]");
-		this.setResponsejsonstr(json.toString());
-		response.setContentType("text/html");
+		if (StringUtils.isNotEmpty(cbName)) {
+		    this.setResponsejsonstr(cbName+"("+json.toString()+")");
+		} else {
+		    this.setResponsejsonstr(json.toString());
+		}
+		response.setContentType("text/json");
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out=response.getWriter();
 		out.write(this.getResponsejsonstr());
@@ -240,6 +247,7 @@ ServletRequestAware, ServletResponseAware {
 	@Action(value="findAllGoodsByismobileplatformgoodsforAndroid")
 	public void findAllGoodsByismobileplatformgoodsforAndroid() throws IOException{
 		if(Validate.StrNotNull(this.getNavid())&&Validate.StrNotNull(this.getSalestate())){
+		    String cbName = request.getParameter("callback");
 			beanlist=this.getGoodsTService().findAllGoodsBynavid(navid, salestate);
 			if(!beanlist.isEmpty()){
 				String temp=null;
@@ -338,8 +346,13 @@ ServletRequestAware, ServletResponseAware {
 				}
 				json.deleteCharAt(json.length()-1);
 				json.append("]");
-				this.setResponsejsonstr(json.toString());
-				response.setContentType("text/html");
+				if (StringUtils.isNotEmpty(cbName)) {
+		            this.setResponsejsonstr(cbName+"("+json.toString()+")");
+		        } else {
+		            this.setResponsejsonstr(json.toString());
+		        }
+				
+				response.setContentType("text/json");
 				response.setCharacterEncoding("utf-8");
 				PrintWriter out=response.getWriter();
 				out.write(this.getResponsejsonstr());
@@ -355,8 +368,9 @@ ServletRequestAware, ServletResponseAware {
 		JSONObject jsonObj = new JSONObject(); 
 		jsonObj.put("users", "1"); 
 		jsonObj.put("u","2"); 
-		response.setContentType("text/html");
+		response.setContentType("text/json");
 		response.setCharacterEncoding("utf-8");
+		response.addHeader("Access-Control-Allow-Origin", "*");
 		PrintWriter out=response.getWriter();
 		out.write(jsonObj.toJSONString());
 		out.flush();
@@ -371,6 +385,7 @@ ServletRequestAware, ServletResponseAware {
 	@Action(value="findGoodsByGoodsidforAndroid")
 	public void findGoodsByGoodsidforAndroid() throws IOException{
 		if(Validate.StrNotNull(this.getGoodsid())){
+		    String cbName = request.getParameter("callback");
 			GoodsT gt=new GoodsT();
 			gt=this.getGoodsTService().findGoodsById(this.getGoodsid().trim());
 			if(gt!=null){
@@ -466,8 +481,12 @@ ServletRequestAware, ServletResponseAware {
 				json.append("\"sales\":\"").append(gt.getSales()).append("\",");
 				json.append("\"realsales\":\"").append(gt.getRealsales()).append("\"");
 				json.append("}]");
-				this.setResponsejsonstr(json.toString());
-				response.setContentType("text/html");
+				if (StringUtils.isNotEmpty(cbName)) {
+                    this.setResponsejsonstr(cbName+"("+json.toString()+")");
+                } else {
+                    this.setResponsejsonstr(json.toString());
+                }
+				response.setContentType("text/json");
 				response.setCharacterEncoding("utf-8");
 				PrintWriter out=response.getWriter();
 				out.write(this.getResponsejsonstr());
